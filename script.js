@@ -1,10 +1,3 @@
-<head>
-    <title>Carte d'Argenteuil</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Inclure jQuery -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 // Initialisation de la carte centrée sur Argenteuil (48.9477, 2.2477)
 var map = L.map('map').setView([48.9477, 2.2477], 13);
@@ -13,19 +6,6 @@ var map = L.map('map').setView([48.9477, 2.2477], 13);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
-
-// Charger et afficher le fichier GeoJSON à partir de GitHub
-$.getJSON('https://raw.githubusercontent.com/BobLoubar/interactive-map/refs/heads/main/Les_quartiers.geojson', function(data) { 
-    L.geoJSON(data, {
-        style: function(feature) {
-            return {
-                color: 'red',  // Couleur de la bordure
-                weight: 2,     // Épaisseur du contour
-                fillOpacity: 0 // Désactive le remplissage
-            };
-        }
-    }).addTo(map).bindPopup("<b>Argenteuil</b>");
-});
 
 // Ajout d'un marqueur Outil en main
 var customIcon = L.icon({
