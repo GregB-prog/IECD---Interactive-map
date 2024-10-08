@@ -24,7 +24,7 @@ var customIcon = L.icon({
     iconUrl: 'https://img.icons8.com/?size=100&id=21081&format=png&color=000000', // Lien vers l'icône personnalisée
     iconSize: [38, 38], // Taille de l'icône
     iconAnchor: [22, 38], // Point de l'icône qui sera au point du marqueur
-    popupAnchor: [-3, -26] // Point depuis l'ancre où apparaîtra la popup
+    popupAnchor: [-3, -76] // Point depuis l'ancre où apparaîtra la popup
 });
 var marker = L.marker([48.94060424918679, 2.2364254535279544], { icon: customIcon }).addTo(map);
 marker.bindPopup("<b>L'Outil en Main</b>").openPopup();
