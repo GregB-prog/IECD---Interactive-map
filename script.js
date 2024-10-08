@@ -6,6 +6,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Inclure jQuery -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
+// Initialisation de la carte centrée sur Argenteuil (48.9477, 2.2477)
+var map = L.map('map').setView([48.9477, 2.2477], 13);
+
 // Ajout des tuiles OpenStreetMap
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
