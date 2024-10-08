@@ -24,3 +24,30 @@ marker.bindPopup("<b>L'Outil en Main</b>");
 marker.on('click', function(e) {
     this.openPopup();
 });
+
+// Fonction pour styliser le contour
+function styleContour(feature) {
+    return {
+        color: 'red',      // Couleur du contour
+        weight: 2,         // Épaisseur de la ligne
+        opacity: 1         // Opacité de la ligne
+    };
+}
+
+// Charger et ajouter le fichier GeoJSON
+fetch('Les_quartiers.geojson')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erreur lors du chargement du fichier GeoJSON');
+        }
+        return response.json();
+    })
+    .then(data => {
+        L.geoJSON(data, {
+            style: styleContour
+        }).addTo(map);
+    })
+    .catch(error => {
+        console.error('Erreur:', error);
+    });
+
