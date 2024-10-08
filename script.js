@@ -28,7 +28,7 @@ marker.on('click', function(e) {
 // Fonction pour styliser le contour
 function styleContour(feature) {
     return {
-        color: '#87CEEB',      // Couleur du contour
+        color: 'green',      // Couleur du contour
         weight: 2,         // Épaisseur de la ligne
         opacity: 1         // Opacité de la ligne
     };
