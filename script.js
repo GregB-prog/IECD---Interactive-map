@@ -30,7 +30,7 @@ function styleContour(feature) {
     return {
         color: '#add8e6',      // Couleur du contour
         weight: 2,         // Épaisseur de la ligne
-        opacity: 1         // Opacité de la ligne
+        opacity: 5         // Opacité de la ligne
     };
 }
 
