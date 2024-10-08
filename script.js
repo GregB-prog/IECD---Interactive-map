@@ -8,5 +8,5 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Ajout d'un marqueur à Argenteuil
 var marker = L.marker([48.9477, 2.2477]).addTo(map);
-marker.bindPopup("<b>Bienvenue à Argenteuil!</b>").openPopup();
+marker.bindPopup("<b>Argenteuil</b>").openPopup();
 
