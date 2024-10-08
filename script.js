@@ -1,4 +1,17 @@
-// Fonction pour charger le GeoJSON
+<head>
+    <title>Carte d'Argenteuil</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Inclure jQuery -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+
+<body>
+    <div id="map" style="height: 500px;"></div> <!-- Assurez-vous que la hauteur est définie -->
+    <script>
+        // Ton code JavaScript ici
+    // Fonction pour charger le GeoJSON
 function loadGeoJSON() {
     $.getJSON('https://raw.githubusercontent.com/BobLoubar/interactive-map/refs/heads/main/Les_quartiers.geojson', function(data) {
         // Ajout du GeoJSON à la carte avec des styles personnalisés
@@ -38,4 +51,8 @@ var customIcon = L.icon({
 // Positionner le marqueur sur la carte
 var marker = L.marker([48.94060424918679, 2.2364254535279544], { icon: customIcon }).addTo(map);
 marker.bindPopup("<b>L'Outil en Main</b>").openPopup(); // Popup sur le marqueur
+
+</body>
+
+
 
