@@ -11,7 +11,7 @@ var customIcon = L.icon({
     iconUrl: 'https://img.icons8.com/?size=100&id=21081&format=png&color=000000', // Lien vers l'icône personnalisée
     iconSize: [25, 25], // Taille de l'icône
     iconAnchor: [22, 38], // Point de l'icône qui sera au point du marqueur
-    popupAnchor: [0, -20] // Point depuis l'ancre où apparaîtra la popup
+    popupAnchor: [-3, -35] // Point depuis l'ancre où apparaîtra la popup
 });
 
 // Création du marqueur sans ouvrir la popup par défaut
