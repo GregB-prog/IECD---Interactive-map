@@ -83,7 +83,7 @@ function styleContour2(feature) {
 }
 
 // Nom que tu veux afficher
-const zoneName = "La plaine d'Argenteuil (projet maraîcher 2026)";
+const zoneName = ("<b>La plaine d'Argenteuil (projet maraîcher 2026)<b>");
 
 // Upload du fichier geojson
 fetch('La_Plaine_Argenteuil.geojson')
