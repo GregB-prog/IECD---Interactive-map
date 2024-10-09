@@ -83,7 +83,7 @@ function styleContour2(feature) {
     };
 }
 // Upload du fichier geojson
-fetch('La_plaine_Argenteuil.geojson')
+fetch('La_Plaine_Argenteuil.geojson')
     .then(response => {
         if (!response.ok) {
             throw new Error('Erreur lors du chargement du fichier GeoJSON');
