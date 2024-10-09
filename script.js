@@ -32,10 +32,16 @@ var customIcon = L.icon({
     iconAnchor: [22, 38], // Point de l'icône qui sera au point du marqueur
     popupAnchor: [-8, -40] // Point depuis l'ancre où apparaîtra la popup
 });
-var marker = L.marker([48.965208, 2.221506], { icon: customIcon }).addTo(map);
-marker.bindPopup("<b>Les Coteaux d'Argenteuil</b>");
-marker.on('click', function(e) {
-    this.openPopup();
+var lieux = [
+    { coords: [48.965208, 2.221506], nom: "Les Coteaux d'Argenteuil" },
+    { coords: [48.968559, 2.241287], nom: "Vin de Sannois" }
+];
+lieux.forEach(function(lieu) {
+    var marker = L.marker(lieu.coords, { icon: customIcon }).addTo(map);
+    marker.bindPopup("<b>" + lieu.nom + "</b>");
+    marker.on('click', function(e) {
+        this.openPopup();
+    });
 });
 
 
