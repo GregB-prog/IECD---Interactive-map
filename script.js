@@ -44,6 +44,7 @@ lieux.forEach(function(lieu) {
     });
 });
 
+// Fichier GeoJSON - Quartiers d'Argenteuil
 
 // Fonction pour styliser le contour
 function styleContour(feature) {
@@ -55,8 +56,7 @@ function styleContour(feature) {
         fillOpacity: 0     // Pas de remplissage visible
     };
 }
-
-// Charger et ajouter le fichier GeoJSON
+// Upload du fichier geojson
 fetch('Les_quartiers.geojson')
     .then(response => {
         if (!response.ok) {
@@ -67,6 +67,32 @@ fetch('Les_quartiers.geojson')
     .then(data => {
         L.geoJSON(data, {
             style: styleContour
+        }).addTo(map);
+    })
+    .catch(error => {
+        console.error('Erreur:', error);
+    });
+
+// Fichier GeoJSON - La plaine d'Argenteuil
+
+function styleContour2(feature) {
+    return {
+        color: 'blue',      // Couleur du contour
+        weight: 2,         // Épaisseur de la ligne
+        opacity: 1,         // Opacité de la ligne
+    };
+}
+// Upload du fichier geojson
+fetch('La plaine d'Argenteuil.geojson')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erreur lors du chargement du fichier GeoJSON');
+        }
+        return response.json();
+    })
+    .then(data => {
+        L.geoJSON(data, {
+            style: styleContour2
         }).addTo(map);
     })
     .catch(error => {
