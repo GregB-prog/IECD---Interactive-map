@@ -82,6 +82,7 @@ function styleContour2(feature) {
         opacity: 1,         // Opacité de la ligne
     };
 }
+
 // Upload du fichier geojson
 fetch('La_Plaine_Argenteuil.geojson')
     .then(response => {
@@ -92,10 +93,23 @@ fetch('La_Plaine_Argenteuil.geojson')
     })
     .then(data => {
         L.geoJSON(data, {
-            style: styleContour2
+            style: styleContour2,
+            onEachFeature: function(feature, layer) {
+                // Vérifie si la propriété 'name' existe dans le GeoJSON
+                if (feature.properties && feature.properties.name) {
+                    // Ajoute une popup avec le nom seulement lors du clic sur la zone
+                    layer.on('click', function() {
+                        layer.bindPopup(feature.properties.name).openPopup();
+                    });
+                } else {
+                    // Message par défaut si pas de nom
+                    layer.on('click', function() {
+                        layer.bindPopup('Projet - La plaine d'''Argenteuil').openPopup();
+                    });
+                }
+            }
         }).addTo(map);
     })
     .catch(error => {
         console.error('Erreur:', error);
     });
-
