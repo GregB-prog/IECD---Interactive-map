@@ -104,7 +104,7 @@ fetch('La_Plaine_Argenteuil.geojson')
                 } else {
                     // Message par défaut si pas de nom
                     layer.on('click', function() {
-                        layer.bindPopup('Projet - La plaine d'''Argenteuil').openPopup();
+                        layer.bindPopup('La plaine Argenteuil (projet 2026)').openPopup();
                     });
                 }
             }
