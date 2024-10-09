@@ -29,7 +29,7 @@ marker.on('click', function(e) {
 var customIcon = L.icon({
     iconUrl: 'https://img.icons8.com/?size=100&id=vnwvFJpUeg6L&format=png&color=000000', // Lien vers l'icône personnalisée
     iconSize: [25, 25], // Taille de l'icône
-    iconAnchor: [22, 38], // Point de l'icône qui sera au point du marqueur
+    iconAnchor: [12.5, 12.5], // Point de l'icône qui sera au point du marqueur
     popupAnchor: [-8, -40] // Point depuis l'ancre où apparaîtra la popup
 });
 var lieux = [
