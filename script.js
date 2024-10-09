@@ -74,7 +74,6 @@ fetch('Les_quartiers.geojson')
     });
 
 // Fichier GeoJSON - La plaine d'Argenteuil
-
 function styleContour2(feature) {
     return {
         color: 'blue',      // Couleur du contour
@@ -82,6 +81,9 @@ function styleContour2(feature) {
         opacity: 1,         // Opacité de la ligne
     };
 }
+
+// Nom que tu veux afficher
+const zoneName = "La plaine d'Argenteuil";
 
 // Upload du fichier geojson
 fetch('La_Plaine_Argenteuil.geojson')
@@ -95,18 +97,10 @@ fetch('La_Plaine_Argenteuil.geojson')
         L.geoJSON(data, {
             style: styleContour2,
             onEachFeature: function(feature, layer) {
-                // Vérifie si la propriété 'name' existe dans le GeoJSON
-                if (feature.properties && feature.properties.name) {
-                    // Ajoute une popup avec le nom seulement lors du clic sur la zone
-                    layer.on('click', function() {
-                        layer.bindPopup(feature.properties.name).openPopup();
-                    });
-                } else {
-                    // Message par défaut si pas de nom
-                    layer.on('click', function() {
-                        layer.bindPopup('La plaine Argenteuil (projet 2026)').openPopup();
-                    });
-                }
+                // Ajoute une popup avec le nom seulement lors du clic sur la zone
+                layer.on('click', function() {
+                    layer.bindPopup(zoneName).openPopup();
+                });
             }
         }).addTo(map);
     })
