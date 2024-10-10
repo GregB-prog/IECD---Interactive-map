@@ -110,7 +110,7 @@ fetch('La_Plaine_Argenteuil.geojson')
 
 
 // Fichier GeoJSON - Les PAE d'Argenteuil
-function styleContour2(feature) {
+function styleContour3(feature) {
     return {
         color: 'green',      // Couleur du contour
         weight: 2,         // Épaisseur de la ligne
@@ -127,7 +127,7 @@ fetch('Les_parcs_d_Activités_Economiques_à_Argenteuil.geojson')
     })
     .then(data => {
         L.geoJSON(data, {
-            style: styleContour2,
+            style: styleContour3,
             onEachFeature: function(feature, layer) {
                 // Ajoute une popup avec le nom seulement lors du clic sur la zone
                 layer.on('click', function() {
