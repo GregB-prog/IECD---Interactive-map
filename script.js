@@ -118,7 +118,7 @@ function styleContour2(feature) {
     };
 }
 const zoneName = ("<b>PAE<b>");
-fetch('Les_Parcs_d_Activités_Economiques_à_Argenteuil.geojson')
+fetch('Les_parcs_d_Activités_Economiques_à_Argenteuil.geojson')
     .then(response => {
         if (!response.ok) {
             throw new Error('Erreur lors du chargement du fichier GeoJSON');
