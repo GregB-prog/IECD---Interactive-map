@@ -83,7 +83,7 @@ function styleContour2(feature) {
 }
 
 // Nom que tu veux afficher
-const zoneName = ("<b>La plaine d'Argenteuil (projet maraîcher 2026)<b>");
+const Name_Plaine_Argenteuil = ("<b>La plaine d'Argenteuil (projet maraîcher 2026)<b>");
 
 // Upload du fichier geojson
 fetch('La_Plaine_Argenteuil.geojson')
@@ -99,7 +99,7 @@ fetch('La_Plaine_Argenteuil.geojson')
             onEachFeature: function(feature, layer) {
                 // Ajoute une popup avec le nom seulement lors du clic sur la zone
                 layer.on('click', function() {
-                    layer.bindPopup(zoneName).openPopup();
+                    layer.bindPopup(Name_Plaine_Argenteuil).openPopup();
                 });
             }
         }).addTo(map);
@@ -117,7 +117,7 @@ function styleContour3(feature) {
         opacity: 1,         // Opacité de la ligne
     };
 }
-const zoneName = ("<b>PAE<b>");
+const Name_Pae = ("<b>PAE<b>");
 fetch('Les_parcs_d_Activités_Economiques_à_Argenteuil.geojson')
     .then(response => {
         if (!response.ok) {
@@ -131,7 +131,7 @@ fetch('Les_parcs_d_Activités_Economiques_à_Argenteuil.geojson')
             onEachFeature: function(feature, layer) {
                 // Ajoute une popup avec le nom seulement lors du clic sur la zone
                 layer.on('click', function() {
-                    layer.bindPopup(zoneName).openPopup();
+                    layer.bindPopup(Name_Pae).openPopup();
                 });
             }
         }).addTo(map);
