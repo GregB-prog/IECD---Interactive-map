@@ -140,7 +140,7 @@ fetch('Les_parcs_d_Activités_Economiques_à_Argenteuil.geojson')
         console.error('Erreur:', error);
     });
 
-// Fichier GeoJSON - Les PAE d'Argenteuil
+// Fichier GeoJSON - Les QPV d'Argenteuil
 function styleContour4(feature) {
     return {
         color: 'yellow',      // Couleur du contour
@@ -149,7 +149,7 @@ function styleContour4(feature) {
     };
 }
 const Name_QPV = ("<b>QPV<b>");
-fetch('quartiers_prioritaires_argenteuil.geojson')
+fetch('votre_fichier_wgs84.geojson')
     .then(response => {
         if (!response.ok) {
             throw new Error('Erreur lors du chargement du fichier GeoJSON');
