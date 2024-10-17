@@ -38,6 +38,35 @@ lieux.forEach(function(lieu) {
     });
 });
 
+// Fichier GeoJSON - Quartiers d'Argenteuil
+
+// Fonction pour styliser le contour
+function styleContour(feature) {
+    return {
+        color: 'red',      // Couleur du contour
+        weight: 2,         // Épaisseur de la ligne
+        opacity: 1,         // Opacité de la ligne
+        fillColor: 'none', // Pas de couleur de remplissage
+        fillOpacity: 0     // Pas de remplissage visible
+    };
+}
+// Upload du fichier geojson
+fetch('Les_quartiers.geojson')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erreur lors du chargement du fichier GeoJSON');
+        }
+        return response.json();
+    })
+    .then(data => {
+        L.geoJSON(data, {
+            style: styleContour
+        }).addTo(map);
+    })
+    .catch(error => {
+        console.error('Erreur:', error);
+    });
+
 // Fichier GeoJSON - La plaine d'Argenteuil
 function styleContour2(feature) {
     return {
