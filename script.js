@@ -127,7 +127,7 @@ fetch('Les_parcs_d_Activités_Economiques_à_Argenteuil.geojson')
     })
     .then(data => {
         L.geoJSON(data, {
-            style: styleContour4,
+            style: styleContour3,
             onEachFeature: function(feature, layer) {
                 // Récupère le nom de la zone depuis les propriétés du GeoJSON
                 const zoneName = feature.properties.NOM_SECTEU;  // Assurez-vous que "nom" correspond bien à la clé dans votre GeoJSON
