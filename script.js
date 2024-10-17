@@ -117,7 +117,7 @@ function styleContour3(feature) {
         opacity: 1,         // Opacité de la ligne
     };
 }
-const Name_Pae = ("<b>PAE<b>");
+
 fetch('Les_parcs_d_Activités_Economiques_à_Argenteuil.geojson')
     .then(response => {
         if (!response.ok) {
@@ -127,11 +127,14 @@ fetch('Les_parcs_d_Activités_Economiques_à_Argenteuil.geojson')
     })
     .then(data => {
         L.geoJSON(data, {
-            style: styleContour3,
+            style: styleContour4,
             onEachFeature: function(feature, layer) {
-                // Ajoute une popup avec le nom seulement lors du clic sur la zone
+                // Récupère le nom de la zone depuis les propriétés du GeoJSON
+                const zoneName = feature.properties.NOM_SECTEU;  // Assurez-vous que "nom" correspond bien à la clé dans votre GeoJSON
+                
+                // Ajoute une popup avec le nom spécifique lors du clic sur la zone
                 layer.on('click', function() {
-                    layer.bindPopup(Name_Pae).openPopup();
+                    layer.bindPopup(`<b>${zoneName}</b>`).openPopup();
                 });
             }
         }).addTo(map);
