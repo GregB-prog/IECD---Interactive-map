@@ -144,6 +144,8 @@ fetch('Les_parcs_d_Activités_Economiques_à_Argenteuil.geojson')
     });
 
 // Fichier GeoJSON - Les QPV d'Argenteuil
+
+// Fonction pour styliser les contours des zones
 function styleContour4(feature) {
     return {
         color: 'yellow',      // Couleur du contour
@@ -152,6 +154,18 @@ function styleContour4(feature) {
     };
 }
 
+// Créer la carte Leaflet
+var map = L.map('map').setView([48.947, 2.25], 13);  // Coordonnées centrées sur Argenteuil
+
+// Ajouter la couche de base (OpenStreetMap)
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+}).addTo(map);
+
+// Créer un groupe de couches pour les QPV
+var qpvLayerGroup = L.layerGroup();
+
+// Charger le fichier GeoJSON et ajouter les zones à la carte
 fetch('votre_fichier_wgs84.json')
     .then(response => {
         if (!response.ok) {
@@ -160,19 +174,32 @@ fetch('votre_fichier_wgs84.json')
         return response.json();
     })
     .then(data => {
-        L.geoJSON(data, {
+        // Ajouter les zones QPV au groupe de couches
+        var qpvLayer = L.geoJSON(data, {
             style: styleContour4,
-            onEachFeature: function(feature, layer) {
-                // Récupère le nom de la zone depuis les propriétés du GeoJSON
-                const zoneName = feature.properties.nom_quartier;  // Assurez-vous que "nom" correspond bien à la clé dans votre GeoJSON
-                
-                // Ajoute une popup avec le nom spécifique lors du clic sur la zone
-                layer.on('click', function() {
-                    layer.bindPopup(`<b>${zoneName}</b>`).openPopup();
-                });
+            onEachFeature: function (feature, layer) {
+                // Récupérer le nom de la zone depuis les propriétés du GeoJSON
+                const zoneName = feature.properties.nom_quartier;  // Assurez-vous que "nom" est bien dans votre fichier GeoJSON
+
+                // Ajouter une popup avec le nom de la zone lors du clic
+                layer.bindPopup(`<b>${zoneName}</b>`);
+
+                // Ajouter la couche au groupe de couches QPV
+                qpvLayerGroup.addLayer(layer);
             }
-        }).addTo(map);
+        });
+        
+        // Ajouter le groupe de couches à la carte
+        qpvLayerGroup.addTo(map);
     })
     .catch(error => {
         console.error('Erreur:', error);
     });
+
+// Ajouter une légende avec un contrôle interactif
+var overlays = {
+    "Quartiers prioritaires": qpvLayerGroup,  // Nom de la couche à afficher dans la légende
+};
+
+// Ajouter le contrôle de couches à la carte (couches visibles/cachées)
+L.control.layers(null, overlays).addTo(map);
