@@ -154,14 +154,6 @@ function styleContour4(feature) {
     };
 }
 
-// Créer la carte Leaflet
-var map = L.map('map').setView([48.947, 2.25], 13);  // Coordonnées centrées sur Argenteuil
-
-// Ajouter la couche de base (OpenStreetMap)
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-}).addTo(map);
-
 // Créer un groupe de couches pour les QPV
 var qpvLayerGroup = L.layerGroup();
 
