@@ -8,10 +8,10 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Ajout d'un marqueur Outil en main
 var customIcon = L.icon({
-    iconUrl: 'https://img.icons8.com/?size=100&id=21081&format=png&color=000000', // Lien vers l'icône personnalisée
-    iconSize: [25, 25], // Taille de l'icône
-    iconAnchor: [12.5, 12.5], // Point de l'icône qui sera au point du marqueur
-    popupAnchor: [-4, -15] // Point depuis l'ancre où apparaîtra la popup
+    iconUrl: 'https://img.icons8.com/?size=100&id=21081&format=png&color=000000',
+    iconSize: [25, 25],
+    iconAnchor: [12.5, 12.5],
+    popupAnchor: [-4, -15]
 });
 var marker = L.marker([48.94060424918679, 2.2364254535279544], { icon: customIcon }).addTo(map);
 marker.bindPopup("<b>L'Outil en Main</b>");
@@ -21,9 +21,9 @@ marker.on('click', function(e) {
 
 // Marqueurs Vignes
 var customIconVignes = L.icon({
-    iconUrl: 'https://img.icons8.com/?size=100&id=vnwvFJpUeg6L&format=png&color=000000', 
-    iconSize: [25, 25], 
-    iconAnchor: [12.5, 12.5], 
+    iconUrl: 'https://img.icons8.com/?size=100&id=vnwvFJpUeg6L&format=png&color=000000',
+    iconSize: [25, 25],
+    iconAnchor: [12.5, 12.5],
     popupAnchor: [-4, -15]
 });
 var lieux = [
@@ -39,18 +39,16 @@ lieux.forEach(function(lieu) {
 });
 
 // Fichier GeoJSON - Quartiers d'Argenteuil
-
-// Fonction pour styliser le contour
 function styleContour(feature) {
     return {
-        color: 'red',      // Couleur du contour
-        weight: 2,         // Épaisseur de la ligne
-        opacity: 1,         // Opacité de la ligne
-        fillColor: 'none', // Pas de couleur de remplissage
-        fillOpacity: 0     // Pas de remplissage visible
+        color: 'red',
+        weight: 2,
+        opacity: 1,
+        fillColor: 'none',
+        fillOpacity: 0
     };
 }
-// Upload du fichier geojson
+
 fetch('Les_quartiers.geojson')
     .then(response => {
         if (!response.ok) {
@@ -70,9 +68,9 @@ fetch('Les_quartiers.geojson')
 // Fichier GeoJSON - La plaine d'Argenteuil
 function styleContour2(feature) {
     return {
-        color: 'blue',      
-        weight: 2,         
-        opacity: 1,         
+        color: 'blue',
+        weight: 2,
+        opacity: 1,
     };
 }
 
@@ -103,9 +101,9 @@ fetch('La_Plaine_Argenteuil.geojson')
 // Fichier GeoJSON - Les PAE d'Argenteuil
 function styleContour3(feature) {
     return {
-        color: 'green',      
-        weight: 2,         
-        opacity: 1,         
+        color: 'green',
+        weight: 2,
+        opacity: 1,
     };
 }
 
@@ -136,9 +134,9 @@ fetch('Les_parcs_d_Activités_Economiques_à_Argenteuil.geojson')
 // Fichier GeoJSON - Les QPV d'Argenteuil
 function styleContour4(feature) {
     return {
-        color: 'yellow',      
-        weight: 2,            
-        opacity: 1,           
+        color: 'yellow',
+        weight: 2,
+        opacity: 1,
     };
 }
 
@@ -156,7 +154,6 @@ fetch('votre_fichier_wgs84.json')
             onEachFeature: function(feature, layer) {
                 const zoneName = feature.properties.nom_quartier;
                 layer.bindPopup(`<b>${zoneName}</b>`);
-                qpvLayerGroup.addLayer(layer);
             }
         });
         qpvLayerGroup.addLayer(qpvLayer);
@@ -167,19 +164,17 @@ fetch('votre_fichier_wgs84.json')
 
 // Charger et afficher les collèges et lycées avec extraction des coordonnées GPS
 var collegesLyceesLayer = L.layerGroup(); // Créer un groupe de couches pour les établissements
-
 fetch('colleges_lycees.json')
     .then(response => {
         if (!response.ok) throw new Error("Erreur lors du chargement des données des collèges et lycées");
         return response.json();
     })
     .then(data => {
-        // Définition de l'icône personnalisée
         var customIcon = L.icon({
-            iconUrl: 'https://img.icons8.com/emoji/48/school-emoji.png', // Lien vers l'icône personnalisée
-            iconSize: [30, 30], // Taille de l'icône
-            iconAnchor: [15, 15], // Point de l'icône qui sera au point du marqueur
-            popupAnchor: [0, -15] // Point depuis l'ancre où apparaîtra la popup
+            iconUrl: 'https://img.icons8.com/emoji/48/school-emoji.png',
+            iconSize: [30, 30],
+            iconAnchor: [15, 15],
+            popupAnchor: [0, -15]
         });
 
         data.forEach(etablissement => {
@@ -191,13 +186,9 @@ fetch('colleges_lycees.json')
                 "Remarques": remarques 
             } = etablissement;
 
-            // Extraction des coordonnées GPS au format [latitude, longitude]
             const [latitude, longitude] = coordonneesGPS.split(',').map(coord => parseFloat(coord.trim()));
-
-            // Création d'un marqueur avec l'icône personnalisée pour chaque établissement
             const marker = L.marker([latitude, longitude], { icon: customIcon });
 
-            // Contenu de la popup
             const popupContent = `
                 <b>${Nom}</b><br>
                 <b>Temps de trajet (transports) :</b> ${tempsTransports}<br>
@@ -212,19 +203,17 @@ fetch('colleges_lycees.json')
 
 // Charger et afficher les MQ et EJ avec extraction des coordonnées GPS
 var mqejLayer = L.layerGroup(); // Créer un groupe de couches pour les établissements
-
 fetch('MQ_EJ.json')
     .then(response => {
-        if (!response.ok) throw new Error("Erreur lors du chargement des données des collèges et lycées");
+        if (!response.ok) throw new Error("Erreur lors du chargement des données des MQ et EJ");
         return response.json();
     })
     .then(data => {
-        // Définition de l'icône personnalisée
         var customIcon = L.icon({
-            iconUrl: 'https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/64/external-city-hall-city-scape-xnimrodx-lineal-color-xnimrodx.png', // Lien vers l'icône personnalisée
-            iconSize: [30, 30], // Taille de l'icône
-            iconAnchor: [15, 15], // Point de l'icône qui sera au point du marqueur
-            popupAnchor: [0, -15] // Point depuis l'ancre où apparaîtra la popup
+            iconUrl: 'https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/64/external-city-hall-city-scape-xnimrodx-lineal-color-xnimrodx.png',
+            iconSize: [30, 30],
+            iconAnchor: [15, 15],
+            popupAnchor: [0, -15]
         });
 
         data.forEach(etablissement => {
@@ -236,13 +225,9 @@ fetch('MQ_EJ.json')
                 "Remarques": remarques 
             } = etablissement;
 
-            // Extraction des coordonnées GPS au format [latitude, longitude]
             const [latitude, longitude] = coordonneesGPS.split(',').map(coord => parseFloat(coord.trim()));
-
-            // Création d'un marqueur avec l'icône personnalisée pour chaque établissement
             const marker = L.marker([latitude, longitude], { icon: customIcon });
 
-            // Contenu de la popup
             const popupContent = `
                 <b>${Nom}</b><br>
                 <b>Temps de trajet (transports) :</b> ${tempsTransports}<br>
@@ -253,7 +238,7 @@ fetch('MQ_EJ.json')
             mqejLayer.addLayer(marker); // Ajouter le marqueur au groupe de couches
         });
     })
-    .catch(error => console.error('Erreur:', error))
+    .catch(error => console.error('Erreur:', error));
 
 // Ajouter une légende avec un contrôle interactif pour les différentes zones
 var overlays = {
@@ -261,7 +246,7 @@ var overlays = {
     "Parcs d'Activités Économiques": paeLayerGroup,
     "Quartiers prioritaires": qpvLayerGroup,
     "Collèges et Lycées": collegesLyceesLayer,
-    "Maisons de quartier et espaces jeunesse": mqejLayer// Ajouter les collèges/lycées ici
+    "Maisons de quartier et Espaces jeunesse": mqejLayer
 };
 
 // Ajouter le contrôle de couches à la carte (couches visibles/cachées)
@@ -271,5 +256,6 @@ L.control.layers(null, overlays).addTo(map);
 plaineLayerGroup.addTo(map);
 paeLayerGroup.addTo(map);
 qpvLayerGroup.addTo(map);
-collegesLyceesLayer.addTo(map); 
-mqejLayer.addto(map);// Ajouter le groupe d'établissements à la carte
+collegesLyceesLayer.addTo(map);
+mqejLayer.addTo(map); // Ajouter le groupe d'établissements à la carte
+
