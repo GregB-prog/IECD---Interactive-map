@@ -165,13 +165,6 @@ fetch('votre_fichier_wgs84.json')
         console.error('Erreur:', error);
     });
 
-// Ajouter une légende avec un contrôle interactif pour les différentes zones
-var overlays = {
-    "La Plaine d'Argenteuil": plaineLayerGroup,
-    "Parcs d'Activités Économiques": paeLayerGroup,
-    "Quartiers prioritaires": qpvLayerGroup
-};
-
 // Ajouter le contrôle de couches à la carte (couches visibles/cachées)
 L.control.layers(null, overlays).addTo(map);
 
@@ -222,8 +215,10 @@ fetch('colleges_lycees.json')
     })
     .catch(error => console.error('Erreur:', error));
 
-// Ajouter le groupe d'établissements scolaires aux overlays
-overlays["Collèges et Lycées"] = collegesLyceesLayer;
-
-// Ajouter le contrôle de couches à la carte (couches visibles/cachées)
-L.control.layers(null, overlays).addTo(map);
+// Ajouter une légende avec un contrôle interactif pour les différentes zones
+var overlays = {
+    "La Plaine d'Argenteuil": plaineLayerGroup,
+    "Parcs d'Activités Économiques": paeLayerGroup,
+    "Quartiers prioritaires": qpvLayerGroup
+    "Collèges et Lycées": collegesLyceesLayer
+};
