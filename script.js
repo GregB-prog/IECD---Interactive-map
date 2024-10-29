@@ -272,4 +272,4 @@ plaineLayerGroup.addTo(map);
 paeLayerGroup.addTo(map);
 qpvLayerGroup.addTo(map);
 collegesLyceesLayer.addTo(map); 
-MQEJLayer.addto(map);// Ajouter le groupe d'établissements à la carte
+mqejLayer.addto(map);// Ajouter le groupe d'établissements à la carte
