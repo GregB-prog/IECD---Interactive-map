@@ -183,10 +183,16 @@ fetch('colleges_lycees.json')
     })
     .then(data => {
         data.forEach(etablissement => {
-            const { Nom, CoordonnéesGPS, TempsTransports, TempsPieds, Remarques } = etablissement;
+            const { 
+                Nom, 
+                "Coordonnées GPS": coordonneesGPS, // Remarque sur la clé : utilisez des guillemets pour les clés avec des espaces
+                "Temps de trajet (transports)": tempsTransports, // Identique
+                "Temps de trajet (à pieds)": tempsPieds, // Identique
+                "Contact": remarques // Ou utiliser une autre clé pour les remarques si tu en as une spécifique
+            } = etablissement;
 
             // Extraction des coordonnées GPS au format [latitude, longitude]
-            const [latitude, longitude] = CoordonnéesGPS.split(',').map(coord => parseFloat(coord.trim()));
+            const [latitude, longitude] = coordonneesGPS.split(',').map(coord => parseFloat(coord.trim()));
 
             // Création d'un marqueur pour chaque établissement
             const marker = L.marker([latitude, longitude]).addTo(map);
@@ -194,11 +200,12 @@ fetch('colleges_lycees.json')
             // Contenu de la popup
             const popupContent = `
                 <b>${Nom}</b><br>
-                <b>Temps de trajet (transports) :</b> ${TempsTransports}<br>
-                <b>Temps de trajet (à pieds) :</b> ${TempsPieds}<br>
-                <b>Remarques :</b> ${Remarques || 'Aucune'}
+                <b>Temps de trajet (transports) :</b> ${tempsTransports}<br>
+                <b>Temps de trajet (à pieds) :</b> ${tempsPieds}<br>
+                <b>Remarques :</b> ${remarques || 'Aucune'}
             `;
             marker.bindPopup(popupContent);
         });
     })
     .catch(error => console.error('Erreur:', error));
+
