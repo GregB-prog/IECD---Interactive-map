@@ -1,6 +1,6 @@
 [
   {
-    "Nom de l'établissement": "Maison de quartier du Centre-Ville",
+    "Nom": "Maison de quartier du Centre-Ville",
     "Type d'établissement": "Maison de quartier",
     "Adresse": "7 rue des Gobelins",
     "Contact": "Tel : 01 34 23 62 70\r\nMail : centre.ville@ville-argenteuil.fr",
@@ -11,7 +11,7 @@
     "Temps de trajet (à pieds)": "19m"
   },
   {
-    "Nom de l'établissement": "Maison de quartier des Coteaux",
+    "Nom": "Maison de quartier des Coteaux",
     "Type d'établissement": "Maison de quartier",
     "Adresse": "78 Avenue du Maréchal Joffre",
     "Contact": "Tel : 01 34 23 43 00\r\nMail : coteaux@ville-argenteuil.fr",
@@ -22,7 +22,7 @@
     "Temps de trajet (à pieds)": "35m"
   },
   {
-    "Nom de l'établissement": "Maison de quartier d'Orgemont-Guy Môquet",
+    "Nom": "Maison de quartier d'Orgemont-Guy Môquet",
     "Type d'établissement": "Maison de quartier",
     "Adresse": "239 route d'Enghien",
     "Contact": "Tel : 01 34 23 68 40\r\nMail : orgemont.volembert@ville-argenteuil.fr ",
@@ -33,7 +33,7 @@
     "Temps de trajet (à pieds)": "57m"
   },
   {
-    "Nom de l'établissement": "Maison de quartier du Val-Notre-Dame",
+    "Nom": "Maison de quartier du Val-Notre-Dame",
     "Type d'établissement": "Maison de quartier",
     "Adresse": "164 boulevard du Général Delambre",
     "Contact": "Tel : 01 34 23 68 30\r\nMail : val.notre.dame@ville-argenteuil.fr",
@@ -44,7 +44,7 @@
     "Temps de trajet (à pieds)": "15m"
   },
   {
-    "Nom de l'établissement": "Maison de quartier du Val'd'Argent-Nord",
+    "Nom": "Maison de quartier du Val'd'Argent-Nord",
     "Type d'établissement": "Maison de quartier",
     "Adresse": "3 place de la Commune de Paris",
     "Contact": "Tel : 01 34 23 45 30\r\nMail : val.argent.nord@ville-argenteuil.fr",
@@ -55,7 +55,7 @@
     "Temps de trajet (à pieds)": "23m"
   },
   {
-    "Nom de l'établissement": "Maison de quartier du Val'd'Argent-Sud",
+    "Nom": "Maison de quartier du Val'd'Argent-Sud",
     "Type d'établissement": "Maison de quartier",
     "Adresse": "13 boulevard du Général Leclerc",
     "Contact": "Tel : 01 34 23 62 80\r\nMail : val.argent.sud@ville-argenteuil.fr",
@@ -66,7 +66,7 @@
     "Temps de trajet (à pieds)": "14m"
   },
   {
-    "Nom de l'établissement": "Espace jeunesse Val-d'Argent-Sud",
+    "Nom": "Espace jeunesse Val-d'Argent-Sud",
     "Type d'établissement": "Espace jeunesse",
     "Adresse": "40 rue des Beurriers",
     "Contact": "Tel : 01 39 82 38 25",
@@ -76,7 +76,7 @@
     "Temps de trajet (à pieds)": "9m"
   },
   {
-    "Nom de l'établissement": "Espace Jeunesse Val-Nord",
+    "Nom": "Espace Jeunesse Val-Nord",
     "Type d'établissement": "Espace jeunesse",
     "Adresse": "Place Saint Just",
     "Contact": "Tel : 01 39 80 30 73",
@@ -85,7 +85,7 @@
     "Temps de trajet (à pieds)": "30m"
   },
   {
-    "Nom de l'établissement": "Espace jeunesse des Coteaux",
+    "Nom": "Espace jeunesse des Coteaux",
     "Type d'établissement": "Espace jeunesse",
     "Adresse": "12 rue de Védrines",
     "Contact": "Tel : 01 39 81 37 84",
