@@ -177,9 +177,9 @@ fetch('colleges_lycees.json')
         // Définition de l'icône personnalisée
         var customIcon = L.icon({
             iconUrl: 'https://img.icons8.com/emoji/48/school-emoji.png', // Lien vers l'icône personnalisée
-            iconSize: [25, 25], // Taille de l'icône
-            iconAnchor: [12.5, 12.5], // Point de l'icône qui sera au point du marqueur
-            popupAnchor: [-2, -15] // Point depuis l'ancre où apparaîtra la popup
+            iconSize: [30, 30], // Taille de l'icône
+            iconAnchor: [15, 15], // Point de l'icône qui sera au point du marqueur
+            popupAnchor: [0, -15] // Point depuis l'ancre où apparaîtra la popup
         });
 
         data.forEach(etablissement => {
