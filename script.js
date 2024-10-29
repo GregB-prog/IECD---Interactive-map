@@ -211,7 +211,7 @@ fetch('colleges_lycees.json')
     .catch(error => console.error('Erreur:', error));
 
 // Charger et afficher les MQ et EJ avec extraction des coordonnées GPS
-var MQEJLayer = L.layerGroup(); // Créer un groupe de couches pour les établissements
+var mqejLayer = L.layerGroup(); // Créer un groupe de couches pour les établissements
 
 fetch('MQ_EJ.json')
     .then(response => {
@@ -250,7 +250,7 @@ fetch('MQ_EJ.json')
                 <b>Remarques :</b> ${remarques || 'Aucune'}
             `;
             marker.bindPopup(popupContent);
-            MQEJLayer.addLayer(marker); // Ajouter le marqueur au groupe de couches
+            mqejLayer.addLayer(marker); // Ajouter le marqueur au groupe de couches
         });
     })
     .catch(error => console.error('Erreur:', error))
@@ -260,8 +260,8 @@ var overlays = {
     "La Plaine d'Argenteuil": plaineLayerGroup,
     "Parcs d'Activités Économiques": paeLayerGroup,
     "Quartiers prioritaires": qpvLayerGroup,
-    "Collèges et Lycées": collegesLyceesLayer
-    "Maisons de quartier et espaces jeunesse": MQEJLayer// Ajouter les collèges/lycées ici
+    "Collèges et Lycées": collegesLyceesLayer,
+    "Maisons de quartier et espaces jeunesse": mqejLayer// Ajouter les collèges/lycées ici
 };
 
 // Ajouter le contrôle de couches à la carte (couches visibles/cachées)
