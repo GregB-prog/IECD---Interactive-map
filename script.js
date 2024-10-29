@@ -196,7 +196,7 @@ fetch('colleges_lycees.json')
                 "Coordonnées GPS": coordonneesGPS, 
                 "Temps de trajet (transports)": tempsTransports, 
                 "Temps de trajet (à pieds)": tempsPieds, 
-                "Contact": remarques // Ou utiliser une autre clé pour les remarques si tu en as une spécifique
+                "Remarques": remarques // Ou utiliser une autre clé pour les remarques si tu en as une spécifique
             } = etablissement;
 
             // Extraction des coordonnées GPS au format [latitude, longitude]
