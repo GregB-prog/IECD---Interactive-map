@@ -176,6 +176,9 @@ var overlays = {
 L.control.layers(null, overlays).addTo(map);
 
 // Charger et afficher les collèges et lycées avec extraction des coordonnées GPS
+
+var collegesLyceesLayer = L.layerGroup(); // Créer un groupe de couches pour les établissements
+
 fetch('colleges_lycees.json')
     .then(response => {
         if (!response.ok) throw new Error("Erreur lors du chargement des données des collèges et lycées");
@@ -212,9 +215,15 @@ fetch('colleges_lycees.json')
                 <b>Temps de trajet (à pieds) :</b> ${tempsPieds}<br>
                 <b>Remarques :</b> ${remarques || 'Aucune'}
             `;
-            marker.bindPopup(popupContent);
+            marker.bindPopup(popupContent)
+            collegesLyceesLayer.addLayer(marker);;
         });
+        collegesLyceesLayer.addTo(map);
     })
     .catch(error => console.error('Erreur:', error));
 
+// Ajouter le groupe d'établissements scolaires aux overlays
+overlays["Collèges et Lycées"] = collegesLyceesLayer;
 
+// Ajouter le contrôle de couches à la carte (couches visibles/cachées)
+L.control.layers(null, overlays).addTo(map);
