@@ -174,3 +174,31 @@ var overlays = {
 
 // Ajouter le contrôle de couches à la carte (couches visibles/cachées)
 L.control.layers(null, overlays).addTo(map);
+
+// Charger et afficher les collèges et lycées avec extraction des coordonnées GPS
+fetch('colleges_lycees.json')
+    .then(response => {
+        if (!response.ok) throw new Error("Erreur lors du chargement des données des collèges et lycées");
+        return response.json();
+    })
+    .then(data => {
+        data.forEach(etablissement => {
+            const { Nom, CoordonnéesGPS, TempsTransports, TempsPieds, Remarques } = etablissement;
+
+            // Extraction des coordonnées GPS au format [latitude, longitude]
+            const [latitude, longitude] = CoordonnéesGPS.split(',').map(coord => parseFloat(coord.trim()));
+
+            // Création d'un marqueur pour chaque établissement
+            const marker = L.marker([latitude, longitude]).addTo(map);
+
+            // Contenu de la popup
+            const popupContent = `
+                <b>${Nom}</b><br>
+                <b>Temps de trajet (transports) :</b> ${TempsTransports}<br>
+                <b>Temps de trajet (à pieds) :</b> ${TempsPieds}<br>
+                <b>Remarques :</b> ${Remarques || 'Aucune'}
+            `;
+            marker.bindPopup(popupContent);
+        });
+    })
+    .catch(error => console.error('Erreur:', error));
