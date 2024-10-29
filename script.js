@@ -165,11 +165,7 @@ fetch('votre_fichier_wgs84.json')
         console.error('Erreur:', error);
     });
 
-// Ajouter le contrôle de couches à la carte (couches visibles/cachées)
-L.control.layers(null, overlays).addTo(map);
-
 // Charger et afficher les collèges et lycées avec extraction des coordonnées GPS
-
 var collegesLyceesLayer = L.layerGroup(); // Créer un groupe de couches pour les établissements
 
 fetch('colleges_lycees.json')
@@ -192,14 +188,14 @@ fetch('colleges_lycees.json')
                 "Coordonnées GPS": coordonneesGPS, 
                 "Temps de trajet (transports)": tempsTransports, 
                 "Temps de trajet (à pieds)": tempsPieds, 
-                "Remarques": remarques // Ou utiliser une autre clé pour les remarques si tu en as une spécifique
+                "Remarques": remarques 
             } = etablissement;
 
             // Extraction des coordonnées GPS au format [latitude, longitude]
             const [latitude, longitude] = coordonneesGPS.split(',').map(coord => parseFloat(coord.trim()));
 
             // Création d'un marqueur avec l'icône personnalisée pour chaque établissement
-            const marker = L.marker([latitude, longitude], { icon: customIcon }).addTo(map);
+            const marker = L.marker([latitude, longitude], { icon: customIcon });
 
             // Contenu de la popup
             const popupContent = `
@@ -208,10 +204,9 @@ fetch('colleges_lycees.json')
                 <b>Temps de trajet (à pieds) :</b> ${tempsPieds}<br>
                 <b>Remarques :</b> ${remarques || 'Aucune'}
             `;
-            marker.bindPopup(popupContent)
-            collegesLyceesLayer.addLayer(marker);;
+            marker.bindPopup(popupContent);
+            collegesLyceesLayer.addLayer(marker); // Ajouter le marqueur au groupe de couches
         });
-        collegesLyceesLayer.addTo(map);
     })
     .catch(error => console.error('Erreur:', error));
 
@@ -219,6 +214,15 @@ fetch('colleges_lycees.json')
 var overlays = {
     "La Plaine d'Argenteuil": plaineLayerGroup,
     "Parcs d'Activités Économiques": paeLayerGroup,
-    "Quartiers prioritaires": qpvLayerGroup
-    "Collèges et Lycées": collegesLyceesLayer
+    "Quartiers prioritaires": qpvLayerGroup,
+    "Collèges et Lycées": collegesLyceesLayer // Ajouter les collèges/lycées ici
 };
+
+// Ajouter le contrôle de couches à la carte (couches visibles/cachées)
+L.control.layers(null, overlays).addTo(map);
+
+// Ajouter les groupes de couches à la carte
+plaineLayerGroup.addTo(map);
+paeLayerGroup.addTo(map);
+qpvLayerGroup.addTo(map);
+collegesLyceesLayer.addTo(map); // Ajouter le groupe d'établissements à la carte
