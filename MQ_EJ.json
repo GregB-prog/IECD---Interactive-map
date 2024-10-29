@@ -1,0 +1,96 @@
+[
+  {
+    "Nom de l'établissement": "Maison de quartier du Centre-Ville",
+    "Type d'établissement": "Maison de quartier",
+    "Adresse": "7 rue des Gobelins",
+    "Contact": "Tel : 01 34 23 62 70\r\nMail : centre.ville@ville-argenteuil.fr",
+    "Acitivités proposées": "Lieu d'Accueil Parent Enfant (LAEP)\r\nAteliers créatifs pour tous les âges (arts plastiques, éveil musical contes et histoires)\r\nMoments hebdomadaires de débats et de partages pour les parents de jeunes enfants + CLAS (Contrat Local d'Accompagnement à la Scolarité)\r\nActivités éducatives, sociales et culturelles pour les familles, adultes et seniors\r\nActivités du CCAS (Centre Communal d'Action Sociale) : cours de gym\r\nActivités associatives (associations extérieures)\r\nPermanences sociales (CAF, ML, PLIE, PRE)\r\nAteliers sociaux linguistiques (ASL) hebdomadaires",
+    "Remarques": "Accueille une permanence de la ML et l'espace jeunesse du Centre-Ville",
+    "Coordonnées GPS": "48.942538275698844, 2.2521599701217188",
+    "Temps de trajet (transports)": "14m",
+    "Temps de trajet (à pieds)": "19m"
+  },
+  {
+    "Nom de l'établissement": "Maison de quartier des Coteaux",
+    "Type d'établissement": "Maison de quartier",
+    "Adresse": "78 Avenue du Maréchal Joffre",
+    "Contact": "Tel : 01 34 23 43 00\r\nMail : coteaux@ville-argenteuil.fr",
+    "Acitivités proposées": "Ateliers créatifs hebdomadaires (création manuelle, découverte musicale…) parents-enfants\r\nSorties familiales \r\nLAEP\r\nSoirées jeux\r\nActivités associatives (académie argentolienne de peinture - création de tableaux dans toutes les tech niques - théâtre, gym, arts plastiques...)\r\nAteliers bi-hebdomadaires de couture pour adultes\r\nRDV adultes\r\nCours d'atelier sociolinguistique hebdomadaire pour adultes",
+    "Remarques": "Accueille une permanence de la ML",
+    "Coordonnées GPS": "48.95843695579331, 2.24125645204708",
+    "Temps de trajet (transports)": "21m",
+    "Temps de trajet (à pieds)": "35m"
+  },
+  {
+    "Nom de l'établissement": "Maison de quartier d'Orgemont-Guy Môquet",
+    "Type d'établissement": "Maison de quartier",
+    "Adresse": "239 route d'Enghien",
+    "Contact": "Tel : 01 34 23 68 40\r\nMail : orgemont.volembert@ville-argenteuil.fr ",
+    "Acitivités proposées": "Atelier percussions en famille dès 8 ans\r\nLAEP\r\nAccompagnement à la scolarité\r\nAteliers théâtre\r\nCours d'anglais et d'arabe pour les enfants\r\nAteliers de couture hebdomadaires",
+    "Remarques": "Accueille une permanence de la ML et l'espace jeunesse d'Orgemont",
+    "Coordonnées GPS": "48.95707746966269, 2.278841853490821",
+    "Temps de trajet (transports)": "28m",
+    "Temps de trajet (à pieds)": "57m"
+  },
+  {
+    "Nom de l'établissement": "Maison de quartier du Val-Notre-Dame",
+    "Type d'établissement": "Maison de quartier",
+    "Adresse": "164 boulevard du Général Delambre",
+    "Contact": "Tel : 01 34 23 68 30\r\nMail : val.notre.dame@ville-argenteuil.fr",
+    "Acitivités proposées": "LAEP\r\nAtelier tricot'Thé\r\nCours de yoga\r\nSophrologie\r\nÉchanges et partage entre adultes\r\nThé dansant seniors\r\nAssociation SCRAP EN VAL – atelier de scrapbooking \r\nAssociation PIQUE ET COUD - atelier couture\r\nAssociation DANSE TA VIE-atelier de danse enfants\r\nAssociation PR'AISANCE - atelier yoga\r\nAssociation CUBA SIN FRONTERAS – atelier de danses latines\r\nAssociation AMABVO-Atelier de danses berbères\r\nAssociation CLINIQUE URBAINE",
+    "Remarques": "Accueille une permanence de la ML",
+    "Coordonnées GPS": "48.93880432196695, 2.224629504056024",
+    "Temps de trajet (transports)": "13m",
+    "Temps de trajet (à pieds)": "15m"
+  },
+  {
+    "Nom de l'établissement": "Maison de quartier du Val'd'Argent-Nord",
+    "Type d'établissement": "Maison de quartier",
+    "Adresse": "3 place de la Commune de Paris",
+    "Contact": "Tel : 01 34 23 45 30\r\nMail : val.argent.nord@ville-argenteuil.fr",
+    "Acitivités proposées": "Atelier Socio-Linguistique (ASL)\r\nAccompagnement scolaire\r\nSorties familiales\r\nActivités vacances scolaires (stages d'activité, ateliers créatifs, animations ludiques et artistiques pour tous les âges)",
+    "Remarques": "Accueille une permanence de la ML",
+    "Coordonnées GPS": "48.95280070282789, 2.226056869571931",
+    "Temps de trajet (transports)": "14m",
+    "Temps de trajet (à pieds)": "23m"
+  },
+  {
+    "Nom de l'établissement": "Maison de quartier du Val'd'Argent-Sud",
+    "Type d'établissement": "Maison de quartier",
+    "Adresse": "13 boulevard du Général Leclerc",
+    "Contact": "Tel : 01 34 23 62 80\r\nMail : val.argent.sud@ville-argenteuil.fr",
+    "Acitivités proposées": "ASL\r\nAteliers artistiques\r\nThéâtre (enfants, ados et adultes)\r\nLAEP\r\nSoirées de rencontres culturelles \r\nMoments de partages entre parents",
+    "Remarques": "Accueille une permanence de la ML",
+    "Coordonnées GPS": "48.946362985216965, 2.2393820815817502",
+    "Temps de trajet (transports)": "11m",
+    "Temps de trajet (à pieds)": "14m"
+  },
+  {
+    "Nom de l'établissement": "Espace jeunesse Val-d'Argent-Sud",
+    "Type d'établissement": "Espace jeunesse",
+    "Adresse": "40 rue des Beurriers",
+    "Contact": "Tel : 01 39 82 38 25",
+    "Acitivités proposées": "Au sein de ces espaces, la ville propose de nombreuses activités dont : \r\n- Des séjours encadrés : Ce mode de vacances est une action privilégiée pour une ouverture aux autres et au monde. Il permet l’apprentissage de la vie en collectivité et favorise l’éducation à la citoyenneté. Il a également pour objectif de responsabiliser le jeune en l’investissant dans toutes les étapes du projet.\r\n- Des ateliers artistiques : Des cafés-concerts, des ateliers artistiques diversifiés, l’accès au studio de répétition.\r\n- Une offre d’activités éducatives, distractives, culturelles et structurante.\r\n- Un travail en réseau et un accueil.\r\n- Des animations sportives de proximité.\r\n- Divers ateliers à dimension ville : Graff, cuisine, calligraphie, photo, musique, percussion, éloquence.\r\n",
+    "Coordonnées GPS": "48.94401318192976, 2.232911913359019",
+    "Temps de trajet (transports)": "10m",
+    "Temps de trajet (à pieds)": "9m"
+  },
+  {
+    "Nom de l'établissement": "Espace Jeunesse Val-Nord",
+    "Type d'établissement": "Espace jeunesse",
+    "Adresse": "Place Saint Just",
+    "Contact": "Tel : 01 39 80 30 73",
+    "Coordonnées GPS": "48.95405494183054, 2.2269157490159297",
+    "Temps de trajet (transports)": "22m",
+    "Temps de trajet (à pieds)": "30m"
+  },
+  {
+    "Nom de l'établissement": "Espace jeunesse des Coteaux",
+    "Type d'établissement": "Espace jeunesse",
+    "Adresse": "12 rue de Védrines",
+    "Contact": "Tel : 01 39 81 37 84",
+    "Coordonnées GPS": "48.95914037891603, 2.2427042124753824",
+    "Temps de trajet (transports)": "22m",
+    "Temps de trajet (à pieds)": "37m"
+  }
+]
