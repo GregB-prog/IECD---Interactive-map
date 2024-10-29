@@ -210,12 +210,58 @@ fetch('colleges_lycees.json')
     })
     .catch(error => console.error('Erreur:', error));
 
+// Charger et afficher les MQ et EJ avec extraction des coordonnées GPS
+var MQEJLayer = L.layerGroup(); // Créer un groupe de couches pour les établissements
+
+fetch('MQ_EJ.json')
+    .then(response => {
+        if (!response.ok) throw new Error("Erreur lors du chargement des données des collèges et lycées");
+        return response.json();
+    })
+    .then(data => {
+        // Définition de l'icône personnalisée
+        var customIcon = L.icon({
+            iconUrl: 'https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/64/external-city-hall-city-scape-xnimrodx-lineal-color-xnimrodx.png', // Lien vers l'icône personnalisée
+            iconSize: [30, 30], // Taille de l'icône
+            iconAnchor: [15, 15], // Point de l'icône qui sera au point du marqueur
+            popupAnchor: [0, -15] // Point depuis l'ancre où apparaîtra la popup
+        });
+
+        data.forEach(etablissement => {
+            const { 
+                Nom, 
+                "Coordonnées GPS": coordonneesGPS, 
+                "Temps de trajet (transports)": tempsTransports, 
+                "Temps de trajet (à pieds)": tempsPieds, 
+                "Remarques": remarques 
+            } = etablissement;
+
+            // Extraction des coordonnées GPS au format [latitude, longitude]
+            const [latitude, longitude] = coordonneesGPS.split(',').map(coord => parseFloat(coord.trim()));
+
+            // Création d'un marqueur avec l'icône personnalisée pour chaque établissement
+            const marker = L.marker([latitude, longitude], { icon: customIcon });
+
+            // Contenu de la popup
+            const popupContent = `
+                <b>${Nom}</b><br>
+                <b>Temps de trajet (transports) :</b> ${tempsTransports}<br>
+                <b>Temps de trajet (à pieds) :</b> ${tempsPieds}<br>
+                <b>Remarques :</b> ${remarques || 'Aucune'}
+            `;
+            marker.bindPopup(popupContent);
+            MQEJLayer.addLayer(marker); // Ajouter le marqueur au groupe de couches
+        });
+    })
+    .catch(error => console.error('Erreur:', error))
+
 // Ajouter une légende avec un contrôle interactif pour les différentes zones
 var overlays = {
     "La Plaine d'Argenteuil": plaineLayerGroup,
     "Parcs d'Activités Économiques": paeLayerGroup,
     "Quartiers prioritaires": qpvLayerGroup,
-    "Collèges et Lycées": collegesLyceesLayer // Ajouter les collèges/lycées ici
+    "Collèges et Lycées": collegesLyceesLayer
+    "Maisons de quartier et espaces jeunesse": MQEJLayer// Ajouter les collèges/lycées ici
 };
 
 // Ajouter le contrôle de couches à la carte (couches visibles/cachées)
