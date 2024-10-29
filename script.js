@@ -182,20 +182,28 @@ fetch('colleges_lycees.json')
         return response.json();
     })
     .then(data => {
+        // Définition de l'icône personnalisée
+        var customIcon = L.icon({
+            iconUrl: 'https://img.icons8.com/external-bearicons-glyph-bearicons/64/external-School-location-bearicons-glyph-bearicons.png', // Lien vers l'icône personnalisée
+            iconSize: [25, 25], // Taille de l'icône
+            iconAnchor: [12.5, 12.5], // Point de l'icône qui sera au point du marqueur
+            popupAnchor: [-4, -15] // Point depuis l'ancre où apparaîtra la popup
+        });
+
         data.forEach(etablissement => {
             const { 
                 Nom, 
-                "Coordonnées GPS": coordonneesGPS, // Remarque sur la clé : utilisez des guillemets pour les clés avec des espaces
-                "Temps de trajet (transports)": tempsTransports, // Identique
-                "Temps de trajet (à pieds)": tempsPieds, // Identique
+                "Coordonnées GPS": coordonneesGPS, 
+                "Temps de trajet (transports)": tempsTransports, 
+                "Temps de trajet (à pieds)": tempsPieds, 
                 "Contact": remarques // Ou utiliser une autre clé pour les remarques si tu en as une spécifique
             } = etablissement;
 
             // Extraction des coordonnées GPS au format [latitude, longitude]
             const [latitude, longitude] = coordonneesGPS.split(',').map(coord => parseFloat(coord.trim()));
 
-            // Création d'un marqueur pour chaque établissement
-            const marker = L.marker([latitude, longitude]).addTo(map);
+            // Création d'un marqueur avec l'icône personnalisée pour chaque établissement
+            const marker = L.marker([latitude, longitude], { icon: customIcon }).addTo(map);
 
             // Contenu de la popup
             const popupContent = `
@@ -208,4 +216,5 @@ fetch('colleges_lycees.json')
         });
     })
     .catch(error => console.error('Erreur:', error));
+
 
