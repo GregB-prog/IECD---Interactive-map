@@ -271,4 +271,5 @@ L.control.layers(null, overlays).addTo(map);
 plaineLayerGroup.addTo(map);
 paeLayerGroup.addTo(map);
 qpvLayerGroup.addTo(map);
-collegesLyceesLayer.addTo(map); // Ajouter le groupe d'établissements à la carte
+collegesLyceesLayer.addTo(map); 
+MQEJLayer.addto(map);// Ajouter le groupe d'établissements à la carte
