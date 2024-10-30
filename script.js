@@ -39,7 +39,7 @@ var customIconVignes = L.icon({
     iconUrl: 'https://img.icons8.com/?size=100&id=vnwvFJpUeg6L&format=png&color=000000',
     iconSize: [25, 25],
     iconAnchor: [12.5, 12.5],
-    popupAnchor: [-4, -15]
+    popupAnchor: [-2, -15]
 });
 var lieux = [
     { coords: [48.965208, 2.221506], nom: "Les Coteaux d'Argenteuil" },
