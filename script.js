@@ -24,7 +24,7 @@ var customIconMS = L.icon({
     iconUrl: 'https://img.icons8.com/external-justicon-lineal-color-justicon/50/external-tree-tree-justicon-lineal-color-justicon-8.png',
     iconSize: [30, 30],
     iconAnchor: [15, 15],
-    popupAnchor: [-2, -15]
+    popupAnchor: [-2, -17.5]
 });
 
 var marker = L.marker([48.94400634691963, 2.258001387306958], {icon: customIconMS}).addTo(map);
