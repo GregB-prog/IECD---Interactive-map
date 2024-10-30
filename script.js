@@ -29,6 +29,7 @@ var customIconMS = L.icon({
 
 var marker = L.marker([48.94400634691963, 2.258001387306958], {icon: customIconMS}).addTo(map);
 marker.bindPopup("<b>Musée Sauvage</b>");
+console.log("Marqueur ajouté :", marker);  
 marker.on('click', function(e) {
     this.openPopup();
 });
