@@ -22,7 +22,7 @@ marker.on('click', function(e) {
 // Marqueur Musée Sauvage
 var customIconMS = L.icon({
     iconUrl: 'https://img.icons8.com/external-justicon-lineal-color-justicon/50/external-tree-tree-justicon-lineal-color-justicon-8.png',
-    iconSize: [25, 25],
+    iconSize: [100, 100],
     iconAnchor: [12.5, 12.5],
     popupAnchor: [-4, -15]
 });
