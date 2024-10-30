@@ -19,6 +19,20 @@ marker.on('click', function(e) {
     this.openPopup();
 });
 
+// Marqueur Musée Sauvage
+var customIconMS = L.icon({
+    iconUrl: 'https://img.icons8.com/external-justicon-lineal-color-justicon/50/external-tree-tree-justicon-lineal-color-justicon-8.png',
+    iconSize: [25, 25],
+    iconAnchor: [12.5, 12.5],
+    popupAnchor: [-4, -15]
+});
+
+var marker = L.marker([48.94400634691963, 2.258001387306958], {icon: customIconMS}).addTo(map);
+marker.bindPopup("<b>Musée Sauvage</b>");
+marker.on('click', function(e) {
+    this.openPopup();
+});
+
 // Marqueurs Vignes
 var customIconVignes = L.icon({
     iconUrl: 'https://img.icons8.com/?size=100&id=vnwvFJpUeg6L&format=png&color=000000',
