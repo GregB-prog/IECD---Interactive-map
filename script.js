@@ -210,7 +210,7 @@ fetch('colleges_lycees.json')
                 <b>Temps de trajet (transports) :</b> ${tempsTransports}<br>
                 <b>Temps de trajet (à pieds) :</b> ${tempsPieds}<br>
                 <b>Remarques :</b> ${remarques || 'Aucune'}<br>
-                <b>Formations d'intérêt :</b> ${formations || 'Non'}
+                <b>Formations d'intérêt :</b> ${formations || 'Aucune'}
             `;
             marker.bindPopup(popupContent);
             collegesLyceesLayer.addLayer(marker); // Ajouter le marqueur au groupe de couches
