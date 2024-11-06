@@ -209,7 +209,7 @@ fetch('colleges_lycees.json')
                 <b>${Nom}</b><br>
                 <b>Temps de trajet (transports) :</b> ${tempsTransports}<br>
                 <b>Temps de trajet (à pieds) :</b> ${tempsPieds}<br>
-                <b>Remarques :</b> ${remarques || 'Aucune'}
+                <b>Remarques :</b> ${remarques || 'Aucune'}<br>
                 <b>Formations d'intérêt :</b> ${formations || 'Non'}
             `;
             marker.bindPopup(popupContent);
