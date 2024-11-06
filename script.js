@@ -198,7 +198,8 @@ fetch('colleges_lycees.json')
                 "Coordonnées GPS": coordonneesGPS, 
                 "Temps de trajet (transports)": tempsTransports, 
                 "Temps de trajet (à pieds)": tempsPieds, 
-                "Remarques": remarques 
+                "Remarques": remarques,
+                "Formations d'intérêt" : formations
             } = etablissement;
 
             const [latitude, longitude] = coordonneesGPS.split(',').map(coord => parseFloat(coord.trim()));
@@ -209,6 +210,7 @@ fetch('colleges_lycees.json')
                 <b>Temps de trajet (transports) :</b> ${tempsTransports}<br>
                 <b>Temps de trajet (à pieds) :</b> ${tempsPieds}<br>
                 <b>Remarques :</b> ${remarques || 'Aucune'}
+                <b>Formations d'intérêt :</b> ${formations}<br>
             `;
             marker.bindPopup(popupContent);
             collegesLyceesLayer.addLayer(marker); // Ajouter le marqueur au groupe de couches
