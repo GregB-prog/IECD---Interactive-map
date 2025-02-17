@@ -315,5 +315,6 @@ plaineLayerGroup.addTo(map);
 paeLayerGroup.addTo(map);
 qpvLayerGroup.addTo(map);
 collegesLyceesLayer.addTo(map);
+entreprisesLayer.addTo(map);
 mqejLayer.addTo(map); // Ajouter le groupe d'établissements à la carte
 
