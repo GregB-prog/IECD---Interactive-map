@@ -34,6 +34,9 @@ marker.on('click', function(e) {
     this.openPopup();
 });
 
+// Créer un groupe de couches pour les vignes
+var vignesLayerGroup = L.layerGroup();
+
 // Marqueurs Vignes
 var customIconVignes = L.icon({
     iconUrl: 'https://img.icons8.com/?size=100&id=vnwvFJpUeg6L&format=png&color=000000',
@@ -46,10 +49,8 @@ var lieux = [
     { coords: [48.968559, 2.241287], nom: "Vin de Sannois" }
 ];
 lieux.forEach(function(lieu) {
-    var marker = L.marker(lieu.coords, { icon: customIconVignes }).addTo(map);
-    marker.bindPopup("<b>" + lieu.nom + "</b>");
-    marker.on('click', function(e) {
-        this.openPopup();
+    let marker = L.marker(lieu.coords, { icon: customIconVignes }).bindPopup(`<b>${lieu.nom}</b>`);
+    vignesLayerGroup.addLayer(marker); // Ajouter au groupe de couches
     });
 });
 
@@ -304,6 +305,7 @@ var overlays = {
     "Quartiers prioritaires": qpvLayerGroup,
     "Collèges et Lycées": collegesLyceesLayer,
     "Entreprises argenteuillaises": entreprisesLayer,
+    "Vignes d'Argenteuil": vignesLayerGroup,
     "Maisons de quartier et Espaces jeunesse": mqejLayer
 };
 
@@ -313,6 +315,7 @@ L.control.layers(null, overlays).addTo(map);
 // Ajouter les groupes de couches à la carte
 plaineLayerGroup.addTo(map);
 paeLayerGroup.addTo(map);
+vignesLayerGroup.addTo(map);
 qpvLayerGroup.addTo(map);
 collegesLyceesLayer.addTo(map);
 entreprisesLayer.addTo(map);
