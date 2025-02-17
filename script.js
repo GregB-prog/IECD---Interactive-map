@@ -51,7 +51,6 @@ var lieux = [
 lieux.forEach(function(lieu) {
     let marker = L.marker(lieu.coords, { icon: customIconVignes }).bindPopup(`<b>${lieu.nom}</b>`);
     vignesLayerGroup.addLayer(marker); // Ajouter au groupe de couches
-    });
 });
 
 // Fichier GeoJSON - Quartiers d'Argenteuil
