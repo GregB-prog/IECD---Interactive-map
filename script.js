@@ -14,7 +14,7 @@ var customIcon = L.icon({
     popupAnchor: [-4, -15]
 });
 var marker = L.marker([48.94060424918679, 2.2364254535279544], { icon: customIcon }).addTo(map);
-marker.bindPopup("<b>L'Bourse du Travail</b>");
+marker.bindPopup("<b>Bourse du Travail</b>");
 marker.on('click', function(e) {
     this.openPopup();
 });
