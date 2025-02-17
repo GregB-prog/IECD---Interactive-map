@@ -1,0 +1,37 @@
+[
+    {
+        "Nom de l'entreprise": "Givaudan France",
+        "Activité": "Parfumerie et cosmétique",
+        "Coordonnées GPS": "48.94623182230437, 2.2630270250355538",
+        "Temps de trajet (en transports)": "18m",
+        "Temps de trajet (à pieds)": "34m"
+    },
+    {
+        "Nom de l'entreprise": "GARAC",
+        "Activité": "Automobile",
+        "Coordonnées GPS": "48.94398292749433, 2.244588924829147",
+        "Temps de trajet (en transports)": "6m",
+        "Temps de trajet (à pieds)": "11m"
+    },
+    {
+        "Nom de l'entreprise": "ETNA industries",
+        "Activité": "Construction d'équipements dans le secteur hydraulique et pneumatique",
+        "Coordonnées GPS": "48.949212529490936, 2.2610332496854255",
+        "Temps de trajet (en transports)": "19m",
+        "Temps de trajet (à pieds)": "32m"
+    },
+    {
+        "Nom de l'entreprise": "Les ateliers du Val d'Argent ",
+        "Activité": "",
+        "Coordonnées GPS": "48.95284761313241, 2.2077590823443742",
+        "Temps de trajet (en transports)": "33m",
+        "Temps de trajet (à pieds)": "47m"
+    },
+    {
+        "Nom de l'entreprise": "Ateliers AEG",
+        "Activité": "Métiers de la chaudronnerie et de la transformation des métaux",
+        "Coordonnées GPS": "48.95121305102332, 2.2119243529906107",
+        "Temps de trajet (en transports)": "26m",
+        "Temps de trajet (à pieds)": "42m"
+    }
+]
