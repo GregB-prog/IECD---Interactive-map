@@ -257,12 +257,53 @@ fetch('MQ_EJ.json')
     })
     .catch(error => console.error('Erreur:', error));
 
+// Charger et afficher les entreprises avec extraction des coordonnées GPS
+var entreprisesLayer = L.layerGroup(); // Créer un groupe de couches pour les établissements
+fetch(entreprises_argenteuillaises.json')
+    .then(response => {
+        if (!response.ok) throw new Error("Erreur lors du chargement des données des collèges et lycées");
+        return response.json();
+    })
+    .then(data => {
+        var customIcon = L.icon({
+            iconUrl: 'https://img.icons8.com/color/48/factory.png',
+            iconSize: [30, 30],
+            iconAnchor: [15, 15],
+            popupAnchor: [0, -15]
+        });
+
+        data.forEach(etablissement => {
+            const { 
+                Nom, 
+                "Coordonnées GPS": coordonneesGPS, 
+                "Temps de trajet (transports)": tempsTransports, 
+                "Temps de trajet (à pieds)": tempsPieds, 
+                "Activité" : activité
+            } = etablissement;
+
+            const [latitude, longitude] = coordonneesGPS.split(',').map(coord => parseFloat(coord.trim()));
+            const marker = L.marker([latitude, longitude], { icon: customIcon });
+
+            const popupContent = `
+                <b>${Nom}</b><br>
+                <b>Temps de trajet (transports) :</b> ${tempsTransports}<br>
+                <b>Temps de trajet (à pieds) :</b> ${tempsPieds}<br>
+                <b>Activité :</b> ${activité || 'Aucune'}
+            `;
+            marker.bindPopup(popupContent);
+            entreprisesLayer.addLayer(marker); // Ajouter le marqueur au groupe de couches
+        });
+    })
+    .catch(error => console.error('Erreur:', error));
+
+
 // Ajouter une légende avec un contrôle interactif pour les différentes zones
 var overlays = {
     "La Plaine d'Argenteuil": plaineLayerGroup,
     "Parcs d'Activités Économiques": paeLayerGroup,
     "Quartiers prioritaires": qpvLayerGroup,
     "Collèges et Lycées": collegesLyceesLayer,
+    "Entreprises argenteuillaises": entreprisesLayer,
     "Maisons de quartier et Espaces jeunesse": mqejLayer
 };
 
