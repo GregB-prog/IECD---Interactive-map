@@ -6,7 +6,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-// Ajout d'un marqueur Outil en main
+// Ajout d'un marqueur Bourse du Travail
 var customIcon = L.icon({
     iconUrl: 'https://img.icons8.com/?size=100&id=21081&format=png&color=000000',
     iconSize: [25, 25],
@@ -14,7 +14,7 @@ var customIcon = L.icon({
     popupAnchor: [-4, -15]
 });
 var marker = L.marker([48.94060424918679, 2.2364254535279544], { icon: customIcon }).addTo(map);
-marker.bindPopup("<b>L'Outil en Main</b>");
+marker.bindPopup("<b>L'Bourse du Travail</b>");
 marker.on('click', function(e) {
     this.openPopup();
 });
