@@ -259,7 +259,7 @@ fetch('MQ_EJ.json')
 
 // Charger et afficher les entreprises avec extraction des coordonnées GPS
 var entreprisesLayer = L.layerGroup(); // Créer un groupe de couches pour les établissements
-fetch(entreprises_argenteuillaises.json')
+fetch('entreprises_argenteuillaises.json')
     .then(response => {
         if (!response.ok) throw new Error("Erreur lors du chargement des données des collèges et lycées");
         return response.json();
