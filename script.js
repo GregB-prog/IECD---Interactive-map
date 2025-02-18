@@ -9,7 +9,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Ajout d'un marqueur Bourse du Travail
 var customIcon = L.icon({
     iconUrl: 'https://img.icons8.com/?size=100&id=21081&format=png&color=000000',
-    iconSize: [25, 25],
+    iconSize: [35, 35],
     iconAnchor: [12.5, 12.5],
     popupAnchor: [-4, -15]
 });
