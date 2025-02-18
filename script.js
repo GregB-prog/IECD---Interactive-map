@@ -11,7 +11,7 @@ var customIcon = L.icon({
     iconUrl: 'https://img.icons8.com/?size=100&id=21081&format=png&color=000000',
     iconSize: [33, 33],
     iconAnchor: [12.5, 12.5],
-    popupAnchor: [-3, -15]
+    popupAnchor: [-3, -5]
 });
 var marker = L.marker([48.94060424918679, 2.2364254535279544], { icon: customIcon }).addTo(map);
 marker.bindPopup("<b>Bourse du Travail</b>");
