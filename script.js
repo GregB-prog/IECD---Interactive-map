@@ -156,7 +156,7 @@ function styleContour4(feature) {
 }
 
 var qpvLayerGroup = L.layerGroup();
-fetch('votre_fichier_wgs84.json')
+fetch('quartiers_prioritaires.json')
     .then(response => {
         if (!response.ok) {
             throw new Error('Erreur lors du chargement du fichier GeoJSON');
