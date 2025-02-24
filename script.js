@@ -34,6 +34,21 @@ marker.on('click', function(e) {
     this.openPopup();
 });
 
+// Marqueur École de la deuxième chance
+var customIconEcole = L.icon({
+    iconUrl: 'https://img.icons8.com/officel/80/school.png',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+    popupAnchor: [-2, -17.5]
+});
+
+ar marker = L.marker([48.94361387924586, 2.2491083862146257], {icon: customIconEcole}).addTo(map);
+marker.bindPopup("<b>École de la Deuxième Chance</b>");
+console.log("Marqueur ajouté :", marker);  
+marker.on('click', function(e) {
+    this.openPopup();
+});
+
 // Créer un groupe de couches pour les vignes
 var vignesLayerGroup = L.layerGroup();
 
