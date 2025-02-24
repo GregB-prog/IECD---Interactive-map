@@ -42,7 +42,7 @@ var customIconEcole = L.icon({
     popupAnchor: [-2, -17.5]
 });
 
-ar marker = L.marker([48.94361387924586, 2.2491083862146257], {icon: customIconEcole}).addTo(map);
+var marker = L.marker([48.94361387924586, 2.2491083862146257], {icon: customIconEcole}).addTo(map);
 marker.bindPopup("<b>École de la Deuxième Chance</b>");
 console.log("Marqueur ajouté :", marker);  
 marker.on('click', function(e) {
