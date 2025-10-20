@@ -1,12 +1,12 @@
 // Initialisation de la carte centrée sur Argenteuil (48.9477, 2.2477)
 var map = L.map('map').setView([48.9477, 2.2477], 13);
 
-// Ajout des tuiles OpenStreetMap
+// Tuiles OpenStreetMap
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-// Ajout d'un marqueur Bourse du Travail
+// Marqueur Bourse du Travail
 var customIcon = L.icon({
     iconUrl: 'https://img.icons8.com/?size=100&id=21081&format=png&color=000000',
     iconSize: [33, 33],
@@ -49,7 +49,7 @@ marker.on('click', function(e) {
     this.openPopup();
 });
 
-// Créer un groupe de couches pour les vignes
+// Groupe de couches pour les vignes
 var vignesLayerGroup = L.layerGroup();
 
 // Marqueurs Vignes
@@ -65,7 +65,7 @@ var lieux = [
 ];
 lieux.forEach(function(lieu) {
     let marker = L.marker(lieu.coords, { icon: customIconVignes }).bindPopup(`<b>${lieu.nom}</b>`);
-    vignesLayerGroup.addLayer(marker); // Ajouter au groupe de couches
+    vignesLayerGroup.addLayer(marker); 
 });
 
 // Fichier GeoJSON - Quartiers d'Argenteuil
@@ -192,7 +192,7 @@ fetch('quartiers_prioritaires.json')
         console.error('Erreur:', error);
     });
 
-// Charger et afficher les collèges et lycées avec extraction des coordonnées GPS
+// Collèges et lycées avec extraction des coordonnées GPS
 var collegesLyceesLayer = L.layerGroup(); 
 fetch('colleges_lycees.json')
     .then(response => {
@@ -233,7 +233,7 @@ fetch('colleges_lycees.json')
     })
     .catch(error => console.error('Erreur:', error));
 
-// Charger et afficher les MQ et EJ avec extraction des coordonnées GPS
+// MQ et EJ avec extraction des coordonnées GPS
 var mqejLayer = L.layerGroup(); 
 fetch('MQ_EJ.json')
     .then(response => {
@@ -272,7 +272,7 @@ fetch('MQ_EJ.json')
     })
     .catch(error => console.error('Erreur:', error));
 
-// Charger et afficher les entreprises avec extraction des coordonnées GPS
+// Entreprises avec extraction des coordonnées GPS
 var entreprisesLayer = L.layerGroup(); 
 fetch('entreprises_argenteuillaises.json')
     .then(response => {
@@ -312,7 +312,7 @@ fetch('entreprises_argenteuillaises.json')
     .catch(error => console.error('Erreur:', error));
 
 
-// Légende avec un contrôle interactif pour les différentes zones
+// Légende
 var overlays = {
     "La Plaine d'Argenteuil": plaineLayerGroup,
     "Parcs d'Activités Économiques": paeLayerGroup,
@@ -333,4 +333,5 @@ qpvLayerGroup.addTo(map);
 collegesLyceesLayer.addTo(map);
 entreprisesLayer.addTo(map);
 mqejLayer.addTo(map);
+
 
