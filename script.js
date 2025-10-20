@@ -193,7 +193,7 @@ fetch('quartiers_prioritaires.json')
     });
 
 // Charger et afficher les collèges et lycées avec extraction des coordonnées GPS
-var collegesLyceesLayer = L.layerGroup(); // Créer un groupe de couches pour les établissements
+var collegesLyceesLayer = L.layerGroup(); 
 fetch('colleges_lycees.json')
     .then(response => {
         if (!response.ok) throw new Error("Erreur lors du chargement des données des collèges et lycées");
@@ -228,13 +228,13 @@ fetch('colleges_lycees.json')
                 <b>Formations d'intérêt :</b> ${formations || 'Aucune'}
             `;
             marker.bindPopup(popupContent);
-            collegesLyceesLayer.addLayer(marker); // Ajouter le marqueur au groupe de couches
+            collegesLyceesLayer.addLayer(marker); 
         });
     })
     .catch(error => console.error('Erreur:', error));
 
 // Charger et afficher les MQ et EJ avec extraction des coordonnées GPS
-var mqejLayer = L.layerGroup(); // Créer un groupe de couches pour les établissements
+var mqejLayer = L.layerGroup(); 
 fetch('MQ_EJ.json')
     .then(response => {
         if (!response.ok) throw new Error("Erreur lors du chargement des données des MQ et EJ");
@@ -267,13 +267,13 @@ fetch('MQ_EJ.json')
                 <b>Remarques :</b> ${remarques || 'Aucune'}
             `;
             marker.bindPopup(popupContent);
-            mqejLayer.addLayer(marker); // Ajouter le marqueur au groupe de couches
+            mqejLayer.addLayer(marker); 
         });
     })
     .catch(error => console.error('Erreur:', error));
 
 // Charger et afficher les entreprises avec extraction des coordonnées GPS
-var entreprisesLayer = L.layerGroup(); // Créer un groupe de couches pour les établissements
+var entreprisesLayer = L.layerGroup(); 
 fetch('entreprises_argenteuillaises.json')
     .then(response => {
         if (!response.ok) throw new Error("Erreur lors du chargement des données des collèges et lycées");
@@ -306,13 +306,13 @@ fetch('entreprises_argenteuillaises.json')
                 <b>Activité :</b> ${activité || 'Aucune'}
             `;
             marker.bindPopup(popupContent);
-            entreprisesLayer.addLayer(marker); // Ajouter le marqueur au groupe de couches
+            entreprisesLayer.addLayer(marker); 
         });
     })
     .catch(error => console.error('Erreur:', error));
 
 
-// Ajouter une légende avec un contrôle interactif pour les différentes zones
+// Légende avec un contrôle interactif pour les différentes zones
 var overlays = {
     "La Plaine d'Argenteuil": plaineLayerGroup,
     "Parcs d'Activités Économiques": paeLayerGroup,
@@ -323,15 +323,14 @@ var overlays = {
     "Maisons de quartier et Espaces jeunesse": mqejLayer
 };
 
-// Ajouter le contrôle de couches à la carte (couches visibles/cachées)
+// Contrôle de couches
 L.control.layers(null, overlays).addTo(map);
 
-// Ajouter les groupes de couches à la carte
 plaineLayerGroup.addTo(map);
 paeLayerGroup.addTo(map);
 vignesLayerGroup.addTo(map);
 qpvLayerGroup.addTo(map);
 collegesLyceesLayer.addTo(map);
 entreprisesLayer.addTo(map);
-mqejLayer.addTo(map); // Ajouter le groupe d'établissements à la carte
+mqejLayer.addTo(map);
 
