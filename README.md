@@ -4,7 +4,7 @@ J'ai créé cette carte dans le cadre de mon stage à l'IECD, avec pour objectif
 
 Le résultat final donne une carte de la ville d'Argenteuil, avec la possibilité de filtrer en fonction des établissements scolaires, associations, entreprises, quartiers prioritaires etc. centrés autour du tiers-lieu "La Bourse du Travail".
 
-Vous puvez trouver la carte ici : https://gregb-prog.github.io/IECD---Interactive-map/
+Vous pouvez trouver la carte ici : https://gregb-prog.github.io/IECD---Interactive-map/
 
 # ENG
 
